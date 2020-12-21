@@ -1,0 +1,29 @@
+.mdb-card{
+  width: 500px;
+  height: 200px;
+}
+
+.content{
+  align-items: center;
+  justify-content: center;
+  width: 1000px;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.greenPriceBorder {
+  border: 2px solid rgb(131, 187, 131);
+}
+
+.redPriceBorder {
+  border: 2px solid rgb(231, 147, 147);
+}
+
+.trips {
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+}

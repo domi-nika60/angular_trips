@@ -1,0 +1,20 @@
+<div style="margin-top: 10px; margin-left: 5px;" >
+    <h2 style="color: white;">Filtruj oferty</h2>
+    <div class="example-container" >
+        <mat-form-field appearance="fill">
+            <mat-label>Cena mininmalna</mat-label>
+            <input matInput [(ngModel)]="actMinPrice" (keyup)=filterByPrice()> 
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Cena maksymalna</mat-label>
+            <input matInput [(ngModel)]="actMaxPrice" (keyup)=filterByPrice()>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Ocena</mat-label>
+            <input matInput [(ngModel)]="actRate" (keyup)=filterByRate($event.key)>
+        </mat-form-field>
+    </div>
+
+</div>

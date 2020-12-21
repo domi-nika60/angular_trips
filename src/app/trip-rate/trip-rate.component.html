@@ -1,0 +1,8 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<span class="star" *ngFor="let item of arrya; let id = index">
+    <mat-icon class="fa fa-star" 
+    [inline]="true" 
+    [ngClass]="starsSelected(id)?'checked':'unchecked'" 
+    (click)="rateTrip(id)"
+    ></mat-icon>
+</span>

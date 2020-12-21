@@ -1,0 +1,34 @@
+<!-- <p>basket works!</p> -->
+<div class="content" style = "margin-right: 100px; margin-left: 100px;">
+    <div class = "content" style = "margin-top: 100px; margin-bottom: 30px;">
+        <mat-card >
+            <h1>Zarezerwowane wycieczki:</h1>
+            <span>
+                <h3 class="total-reservations" [style.color]="summReservation > 10 ? 'green' : 'red'">
+                    Ilość zarezerwowancyh miesjc: {{this.basketService.SumBasketAllTrips()}}
+                </h3>
+                <h3>
+                    Ilość zarezerwowanych wycieczek: {{this.basketService.SumBasketTripsTypes()}}
+                </h3>
+                <h3> Suma: {{sumOfPrice}} </h3>
+            </span>
+        </mat-card>
+    </div>
+    <div>
+        <h1> W koszyku:</h1>
+        <mat-card cascade="true" *ngFor="let elem of this.bBasket">
+            <p>Nazwa produktu: {{getTripById(elem.tripId).name}}</p>
+            <p>Ilość zarezerwowoanych miejsc: {{elem.amount}}</p>
+            <p>Cena za jedno miejsce: {{getTripById(elem.tripId).price | currency:"EUR":"symbol"}}</p>
+        </mat-card>
+    
+        <mdb-card style="width: 300px;"> 
+            <a  mdbBtn color="primary" (click)="buyReserved()" mdbWavesEffect>Kup</a>
+        </mdb-card>
+    </div>
+</div>
+
+    
+
+    
+

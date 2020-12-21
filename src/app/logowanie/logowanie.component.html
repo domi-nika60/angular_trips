@@ -1,0 +1,37 @@
+
+<div class = "content" style="margin-top: 200px">
+
+    
+  <mdb-card cascade="true" wider="true" reverse="true">
+    <mdb-card-body  class="mdb-card">
+
+      <mdb-card-title>
+        <h1>Zaloguj się</h1>
+      </mdb-card-title>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+            <input type="email" id="form2Example1" class="form-control" formControlName="email" />
+            <label class="form-label" for="form2Example1">Nazwa użytkownika lub email</label>
+            </div>
+        
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+            <input type="password" id="form2Example2" class="form-control" formControlName="password" />
+            <label class="form-label" for="form2Example2">Hasło</label>
+            </div>
+        
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4" [disabled]="!loginForm.valid">Zaloguj</button>
+        
+            <!-- Register buttons -->
+            <div class="text-center">
+            <p>Nie masz konta? <a href="register/">Zarejestruj się</a></p>
+            </div>
+        </form>
+      </mdb-card-body>
+    </mdb-card>
+
+</div>
+

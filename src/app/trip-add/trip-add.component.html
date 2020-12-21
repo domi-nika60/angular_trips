@@ -1,0 +1,159 @@
+<div class ="main">
+  <div class = "content" style = "margin-top: 100px;">
+
+    <mdb-card cascade="true" wider="true" reverse="true">
+      <mdb-card-body  class="mdb-card">
+  
+        <mdb-card-title>
+          <h1>Dodaj nową wycieczkę lub edytuj</h1>
+        </mdb-card-title>
+        
+      <!-- Extended material form grid -->
+      <form [formGroup]="newTripForm" (ngSubmit)="onSubmit(newTripForm)">
+          <!-- Grid row -->
+          <div class="form-row">
+            <!-- Grid column -->
+            <div class="col-md-6">
+              <!-- Material input -->
+              <div class="md-form form-group">
+                <input mdbInput type="text" class="form-control" formControlName="name" placeholder="Name">
+                <label for="inputEmail4MD">Nazwa wycieczki</label>
+              </div>
+            </div>
+            <!-- Grid column -->
+        
+            <!-- Grid column -->
+            <div class="col-md-6">
+              <!-- Material input -->
+              <div class="md-form form-group">
+                <input mdbInput type="text" class="form-control" formControlName="destination" placeholder="Destination">
+                <label for="inputPassword4MD">Kierunek</label>
+              </div>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+  
+          <div class="form-row">
+            <!-- Grid column -->
+            <div class="col-md-6">
+              <!-- Material input -->
+              <div class="md-form form-group">
+                <input mdbInput type="date" class="form-control" formControlName="start_date">
+                <label for="inputEmail4MD">Wyjazd</label>
+              </div>
+            </div>
+            <!-- Grid column -->
+        
+            <!-- Grid column -->
+            <div class="col-md-6">
+              <!-- Material input -->
+              <div class="md-form form-group">
+                <input mdbInput type="date" class="form-control" formControlName="end_date">
+                <label for="inputPassword4MD">Powrót</label>
+              </div>
+            </div>
+            <!-- Grid column -->
+          </div>
+            <!-- Grid row -->
+        
+  
+          <div class="form-row">
+            <!-- <div class="col-md-4">
+              <div class="md-form form-group">
+                <input mdbInput type="number" class="form-control" formControlName="availableSeats" placeholder="Maximum seats">
+                <label for="inputEmail4MD">Ilość miejsc dostępnych:</label>
+              </div>
+            </div> -->
+        
+            <!-- Grid column -->
+            <div class="col-md-6">
+              <!-- Material input -->
+              <div class="md-form form-group">
+                <input mdbInput type="number" class="form-control" formControlName="maxSeats" placeholder="Available seats">
+                <label for="inputPassword4MD">Ilość miejsc:</label>
+              </div>
+            </div>
+            <!-- Grid column -->
+  
+  
+          <!-- Grid column -->
+          <div class="col-md-6">
+              <!-- Material input -->
+              <div class="md-form form-group">
+                <input mdbInput type="number" class="form-control" formControlName="price" placeholder="Price (Euro)">
+                <label for="inputPassword4MD">Cena (euro):</label>
+              </div>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+  
+          <div class="form-row">
+            <!-- Grid column -->
+            <div class="col-md-12">
+              <!-- Material input -->
+              <div class="md-form form-group">
+                <input mdbInput type="text" class="form-control" formControlName="description" placeholder="Description">
+                <label for="inputEmail4MD">Opis:</label>
+              </div>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+  
+            <div class="form-row">
+              <!-- Grid column -->
+              <div class="col-md-12">
+                <!-- Material input -->
+                <div class="md-form form-group">
+                  <input mdbInput type="text" class="form-control" formControlName="link" value="https://g.gazetaprawna.pl/p/_wspolne/pliki/4196000/4196575-luwr-paryz.jpg" mdbInput>
+                  <label for="inputEmail4MD">Link do zdjęcia:</label>
+                </div>
+              </div>
+              <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+  
+            <!-- <div class="form-row">
+              <div class="col-md-12">
+                <div class="md-form form-group">
+                  <input mdbInput type="number" class="form-control" formControlName="rate" placeholder="Trip rate">
+                  <label for="inputEmail4MD">Ocena wycieczki 1-5</label>
+                </div>
+              </div>
+            </div> -->
+        
+          <!-- <button mat-raised-button color="primary" type="submit" [disabled]="!newTripForm.valid" >Zatwierdź</button> -->
+          <button 
+                  type="submit" 
+                  mdbBtn color="primary" 
+                  class="relative waves-light" 
+                  (click)="basicModal.show()" 
+                  [disabled]="!newTripForm.valid"
+                  mdbWavesEffect
+                 >
+              Dodaj/Zmodyfikuj
+              </button>
+      </form>
+      <!-- Extended material form grid -->
+    
+      </mdb-card-body>
+    </mdb-card>
+  </div>
+  
+  <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100" id="myModalLabel">Dodane/zmodyfikowane!</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>

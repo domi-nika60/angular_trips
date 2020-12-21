@@ -1,0 +1,48 @@
+
+.mat-sidenav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 200px;
+    background-color:  rgb(112, 106, 111);
+    color: black;
+}
+
+.spacer {
+    flex: 1 1 auto;
+  }
+
+.button {
+    color: white;
+    background-color: rgb(102, 17, 91);
+}
+
+.button_a {
+    color: white;
+}
+
+.button:hover{
+    color: rgb(165, 87, 155);
+}
+
+.button_a:hover{
+    color: rgb(165, 87, 155);
+}
+
+.position{
+    float: right;
+}
+.mat-toolbar {
+    height: 70px;
+}
+
+.example-container {
+    margin: 12px;
+  }
+  
+  mat-drawer-content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }

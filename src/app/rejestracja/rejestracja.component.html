@@ -1,0 +1,59 @@
+
+<div class = "content" style="margin-top: 200px">
+
+    
+    <mdb-card cascade="true" wider="true" reverse="true">
+      <mdb-card-body  class="mdb-card">
+  
+        <mdb-card-title>
+          <h1>Zarejestruj się</h1>
+        </mdb-card-title>
+  
+        <form (ngSubmit)="onSubmit()" [formGroup]="newUserForm">
+            <!-- Username input -->
+            <div class="form-outline mb-4">
+                <input type="string" id="form3Example2" class="form-control" formControlName="username" />
+                <label class="form-label" for="form3Example2">Nazwa użytkownika</label>
+              </div>
+          
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <input type="string" id="form3Example3" class="form-control" formControlName="email"/>
+              <label class="form-label" for="form3Example3">Adres email</label>
+            </div>
+          
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="string" id="form3Example4" class="form-control" formControlName="password" />
+              <label class="form-label" for="form3Example4">Hasło</label>
+            </div>
+          
+            <!-- Submit button -->
+            <button 
+                type="submit" 
+                mdbBtn color="primary" 
+                class="relative waves-light" 
+                (click)="basicModal.show()" 
+                mdbWavesEffect
+               >
+            Załóż konto
+            </button>
+
+          </form>
+        </mdb-card-body>
+      </mdb-card>
+      
+  </div>
+
+  <div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100" id="myModalLabel">Konto zostało założone!</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>OK</button>
+        </div>
+      </div>
+    </div>
+  </div>

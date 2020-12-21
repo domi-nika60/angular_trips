@@ -1,0 +1,16 @@
+
+.mdb-card{
+  background-color: rgb(111, 107, 112);
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content{
+  align-items: center;
+  justify-content: center;
+  width: 800px;  
+}

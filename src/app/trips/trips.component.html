@@ -1,0 +1,55 @@
+
+<div class = "content" style = "margin-top: 50px;">
+    <mdb-card>
+        <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+          <mdb-card-img src={{trip.link[0]}} routerLink="/trips/{{trip.id}}"  alt="Card image cap"></mdb-card-img>
+          <a>
+            <div class="mask"></div>
+          </a>
+        </div>
+      
+        <mdb-card-body>
+          <mdb-card-title style = "color: black;">
+            <h1>"{{ trip.name }}"</h1>
+          </mdb-card-title>
+      
+          
+          <!-- Text -->
+          <mdb-card-text> 
+              <div class="tripContent">
+                <p> kierunek:  </p>
+                <h2>{{ trip.destination }}</h2> 
+                <p> kiedy: </p>
+                <h3> {{trip.start_date}} - {{trip.end_date}} </h3>
+                <p > cena:  </p>
+                <h3 [ngClass]="{'redPriceBorder' : mostExpensiveTrip, 'greenPriceBorder': cheapestTrip}"> {{trip.price | currency}}</h3>
+            </div>
+            <div class="tripRate">
+                <p> Ocena wycieczki: </p>
+                <app-trip-rate 
+                    [(value2)]="trip.rate"
+                >
+                </app-trip-rate>
+            </div>
+      
+           <div class="bookTrip">
+              <p [style.color]="trip.availableSeats <= 3 ? 'red' : 'black'"> Ilość dostępnych miejsc: {{trip.availableSeats}}</p>
+              <p [hidden]="trip.availableSeats > 0" style="font-weight: bold"> {{message | uppercase}} </p>
+                <button mat-raised-button color="primary" *ngIf="logged && !isAdmin" [disabled]="trip.availableSeats == 0" (click)="reserveTrip()">
+                    Zarezerwuj teraz
+                </button>
+                <button mat-raised-button color="primary" *ngIf="logged && !isAdmin" [disabled]="!this.canRemoveFromBasket" (click)="unreserveTrip()">
+                    Usuń z koszyka
+                </button>
+          </div>
+
+          <div>
+            <a mdbBtn color="primary" *ngIf="isAdmin"  (click)="removeTrip()" mdbWavesEffect>Usuń wycieczkę</a>
+            <a  mdbBtn color="primary" *ngIf="isAdmin"  (click)="editTrip()" mdbWavesEffect>Edytuj</a>
+          </div>
+
+          </mdb-card-text>
+      
+        </mdb-card-body>
+      </mdb-card>
+</div>

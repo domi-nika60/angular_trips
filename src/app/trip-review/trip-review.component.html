@@ -1,0 +1,75 @@
+<!-- <p>trip-review works!</p> -->
+
+<div class = "content" style = "margin-top: 50px;"  >
+
+    <mdb-card cascade="true" wider="true" reverse="true" class="my-4">
+        <mdb-card-body cascade="true" class="text-center">
+
+        <mdb-card-title>
+            <h1>Opinie naszych klientów</h1>
+        </mdb-card-title>
+
+        <div *ngFor="let tripelem of allReviews ">
+            <div *ngIf="tripelem.tripId === tripId">
+                <div *ngFor="let comment of tripelem.comment ">
+                    <div class="card">
+                        <div class="card-body">
+                            {{comment}}
+                        </div>
+                    </div>
+                </div>
+                <div class="right-align">
+                    <!-- <h3>Średnia ocen: {{trip?.rate}}</h3>                     -->
+                </div>            
+            </div>
+        </div>
+
+        </mdb-card-body>
+   </mdb-card>
+</div>
+<div class = "content" style = "margin-top: 50px;" *ngIf="this.canMakeReview">
+   <mdb-card cascade="true" wider="true" reverse="true" class="my-4">
+    <mdb-card-body cascade="true" class="text-center">
+        <mdb-card-title>
+            <h1>Zostaw opinię o wycieczce</h1>
+        </mdb-card-title>
+
+
+        <form (ngSubmit)="onSubmit()" [formGroup]="newCommentForm">
+            <!-- Comment input -->
+            <div class="form-outline mb-4">
+                <textarea class="form-control" id="form4Example3" rows="4" formControlName="comment"></textarea>
+                <label class="form-label" for="form4Example3">Komentarz</label>
+            </div>
+            <!-- Ocena -->
+            <div class="form-outline mb-4">
+                <input type="number" id="form6Example6" class="form-control" formControlName="rate" />
+                <label class="form-label" for="form4Example2">Ocena</label>
+            </div>
+            <button 
+                type="submit" 
+                mdbBtn color="primary" 
+                class="btn btn-primary btn-block mb-4"
+                (click)="basicModal.show()" 
+                mdbWavesEffect
+               >
+            Wyślij
+            </button>
+          </form>
+    </mdb-card-body>
+   </mdb-card>
+
+</div>
+
+<div mdbModal #basicModal="mdbModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myBasicModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100" id="myModalLabel">Dziękujemy za podzielenie się opinią</h4>
+        </div>
+        <div class="modal-footer">
+          <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close" (click)="basicModal.hide()" mdbWavesEffect>OK</button>
+        </div>
+      </div>
+    </div>
+  </div>

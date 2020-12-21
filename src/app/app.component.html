@@ -1,0 +1,31 @@
+<div class="flexy">
+    <ng-container>
+        <mat-toolbar color = 'primary' class="fixed-top">
+            <a mat-button class="button" routerLink="/trips" routerLinkActive="active"> Wycieczki </a>
+            
+            
+            <a *ngIf="logged && !isAdmin" mat-button class="button" routerLink="/basket" routerLinkActive="active"> Koszyk </a>
+            <a *ngIf="isAdmin && logged" mat-button class="button" routerLink="/addTrip" routerLinkActive="active"> Nowa wycieczka </a>
+
+            <span class="spacer"></span>
+            <span class="position">
+                <h1> ZWIEDŹ Z NAMI ŚWIAT!</h1> 
+            </span>
+            <span class="spacer"></span>
+            
+            <span  *ngIf="logged">
+                    <p *ngIf="isAdmin" class="float-right">(Admin)</p>
+                    <p *ngIf="!isAdmin" class="float-right">(User)</p>
+                <a class="float-right" mat-button class="button_a" (click)="logout()">Wyloguj się</a>
+            </span>
+
+            <span *ngIf="logged==false">
+                <a class="float-right" mat-button class="button_a" routerLink="/register"> Rejestracja </a>
+                <a class="float-right" mat-button class="button_a" routerLink="/login"> Logowanie </a>
+            </span>
+
+        </mat-toolbar>
+    </ng-container>  
+</div>
+
+<router-outlet></router-outlet>

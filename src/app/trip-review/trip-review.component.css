@@ -1,0 +1,7 @@
+.right-align{
+    display: flex;
+    margin-top: 20px;
+    align-items: left;
+    justify-content: left;
+    
+}

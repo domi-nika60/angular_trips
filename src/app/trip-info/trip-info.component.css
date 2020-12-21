@@ -1,0 +1,17 @@
+
+.mat-card {
+    background-color: rgb(221, 208, 220);
+    color: black;
+}
+
+.carousel{
+    max-width: 1500px;
+    max-height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* max-width: 200px; */
+
+}
+
+

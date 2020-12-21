@@ -1,0 +1,37 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+
+.flexy {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flexy a {
+    margin: 0px 3px; 
+}
+
+.button {
+    color: white;
+    border: 2px solid #d1bacc;
+    height: 40px;
+}
+
+.button_a {
+    color: white;
+}
+
+.button:hover{
+    color: rgb(165, 87, 155);
+}
+
+.button_a:hover{
+    color: rgb(165, 87, 155);
+}
+
+.position{
+    float: right;
+}
+.mat-toolbar {
+    height: 70px;
+}

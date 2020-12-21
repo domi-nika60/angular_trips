@@ -1,0 +1,31 @@
+    <div class = "content" style = "margin-top: 80px;">
+
+        <mat-sidenav-container class="example-container">
+            <mat-sidenav mode="side" opened>
+                <app-trip-filter
+                    [(tripList)] ="tripList"
+                    (priceFilterChange) = priceFilterChange($event)
+                    (rateFilterChange) = rateFilterChange($event)
+                >
+                </app-trip-filter>
+            </mat-sidenav>
+            <mat-sidenav-content>
+                <div class=container>
+                    <div class="trip-list" *ngFor="let trip of (tripList | tripRateFilterPipe: rateFilter) | priceFilterPipe: priceFilter ">
+                        <app-trips 
+                        [trip]="trip" 
+                        [cheapestTrip]="cheapestTrip(trip)" 
+                        [mostExpensiveTrip]="mostExpensiveTrip(trip)" 
+                        (reserveTripEvent)=handleReservationEvent($event)
+                        (sumPriceEvent)=handleSummPriceEvent($event)
+                        (removeTripEvent)=handleRemovingTripEvent(trip)
+                        >
+                        </app-trips> 
+                    </div>
+                </div>
+            </mat-sidenav-content>     
+        </mat-sidenav-container> 
+    </div>
+
+  
+

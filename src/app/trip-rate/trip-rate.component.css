@@ -1,0 +1,12 @@
+.star {
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.checked {
+    color: rgb(245, 171, 35);
+  }
+
+.unmarked {
+    color: lightgray;
+}
